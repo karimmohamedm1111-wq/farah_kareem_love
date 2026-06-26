@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farah ❤️ Kareem</title>
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg,#0f0c29,#302b63,#24243e);
+      color:#fff;
+      text-align:center;
+      overflow-x:hidden;
+    }
+    .container{
+      max-width:900px;
+      margin:auto;
+      padding:20px;
+    }
+    h1{
+      font-size:42px;
+      margin-top:20px;
+      color:#ffb6d9;
+    }
+    .date{
+      font-size:22px;
+      margin:10px 0 20px;
+      color:#ffd6e8;
+    }
+    .love-text{
+      font-size:20px;
+      line-height:1.9;
+      background: rgba(255,255,255,0.08);
+      padding:20px;
+      border-radius:20px;
+      margin:25px 0;
+      box-shadow:0 0 20px rgba(255,255,255,0.08);
+    }
+    .counter{
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      flex-wrap:wrap;
+      margin:25px 0;
+    }
+    .box{
+      background:rgba(255,255,255,0.08);
+      padding:18px;
+      border-radius:18px;
+      min-width:120px;
+      box-shadow:0 0 15px rgba(255,255,255,0.07);
+    }
+    .box h2{
+      margin:0;
+      font-size:30px;
+      color:#ffb6d9;
+    }
+    .box p{
+      margin:8px 0 0;
+      font-size:16px;
+      color:#eee;
+    }
+    .section-title{
+      margin:35px 0 20px;
+      font-size:28px;
+      color:#ffd6e8;
+    }
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:15px;
+      margin-bottom:40px;
+    }
+    .gallery img{
+      width:100%;
+      border-radius:18px;
+      object-fit:cover;
+      box-shadow:0 0 15px rgba(0,0,0,.35);
+    }
+    .small-note{
+      margin-top:30px;
+      font-size:18px;
+      color:#ffd6e8;
+      opacity:.95;
+    }
+    audio{
+      margin-top:15px;
+      width:100%;
+      max-width:420px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>فرح ❤️ كريم</h1>
+    <div class="date">30 / 7 / 2025</div>
+
+    <div class="love-text">
+      من يوم ما دخلتي حياتي وأنا بقيت شايف الدنيا بشكل تاني..  
+      بقيتِ الأمان والونس والراحة اللي بدور عليهم، وبقيتي أجمل صدفة وأحلى نعمة حصلتلي.  
+      كل لحظة بينا محفورة جوايا، من أول كلام بينا، لأول خروجة، لكل ضحكة وكل تفصيلة صغيرة كانت بتعدي علينا وتسيب جوا قلبي أثر كبير.  
+      <br><br>
+      يوم <strong>1 / 6 / 2026</strong> في وسط البلد كان من الأيام اللي مستحيل أنساها، يوم بسيط في شكله لكنه كبير جدًا في قلبي، لأنه كان معاكي.  
+      <br><br>
+      أنا بحبك حب أكبر من الكلام، حب مش بيخلص ولا بيهدى، وكل يوم بيمر بتأكديلي إنك أهم حد في حياتي، وإن وجودك فرق معايا في كل حاجة.  
+      مهما الأيام عدّت، ومهما حصل، إنتِ بالنسبة لي مش مجرد شخص بحبه… إنتِ حتة مني، وفرحتي، وسندي، وأغلى حد على قلبي.  
+      <br><br>
+      وعد مني ليكي إن مشاعري ناحيتك عمرها ما هتتغير، وإن حبك هيفضل يكبر جوايا يوم بعد يوم، لأنك ببساطة أجمل حاجة حصلتلي. ❤️
+    </div>
+
+    <div class="section-title">عدّاد حبنا من يوم 30 / 7 / 2025 ❤️</div>
+    <div class="counter">
+      <div class="box">
+        <h2 id="days">0</h2>
+        <p>يوم</p>
+      </div>
+      <div class="box">
+        <h2 id="hours">0</h2>
+        <p>ساعة</p>
+      </div>
+      <div class="box">
+        <h2 id="minutes">0</h2>
+        <p>دقيقة</p>
+      </div>
+      <div class="box">
+        <h2 id="seconds">0</h2>
+        <p>ثانية</p>
+      </div>
+    </div>
+
+    <div class="section-title">ذكرياتنا ❤️</div>
+    <div class="gallery">
+      <img src="IMG_3109.jpeg" alt="">
+      <img src="IMG_3112.jpeg" alt="">
+      <img src="IMG_3133.jpeg" alt="">
+      <img src="IMG_3142.jpeg" alt="">
+    </div>
+
+    <div class="small-note">
+      كل صورة فيهم حكاية، وكل حكاية فيها جزء من قلبي معاكي 🤍
+    </div>
+  </div>
+
+  <script>
+    const startDate = new Date("2025-07-30T00:00:00").getTime();
+
+    function updateCounter(){
+      const now = new Date().getTime();
+      const diff = now - startDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+    }
+
+    updateCounter();
+    setInterval(updateCounter, 1000);
+  </script>
+</body>
+</html>
